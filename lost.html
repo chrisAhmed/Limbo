@@ -1,0 +1,33 @@
+<! DOCTYPE html>
+<! -- by Jackie Trivino and Chris Ahmed -->
+<! -- Lost intro page-->
+<html>
+	
+	<head>
+		<title> Limbo </title>
+		<link href="css/css.css" rel="stylesheet" type="text/css">
+	</head>
+	
+	<body>
+	
+		<div id="title" align=center-left>
+			<a href="index.php">[ Home ]</a> <a href="lost.html">   [ Lost Something ]   </a>   <a href="found.html">   [ Found Something ]   </a>   <a href="main_login.php">   [ Admins ]   </a>
+			<h3><i>Limbo!</i></h3>
+			<h1>Lost</h1>
+			<p> We specialize in finding lost items around Marist College. If you have lost something, don't worry! <br> 
+						Inform us of your lost item and we will help you find it! Below is a list of items found!</p>
+		</div>
+	
+		<form action="lost-1.html">
+			<input type="submit" value="Click here to insert something you lost!">
+		</form>
+	
+	</body>
+
+	<?php
+		# Connect to MySQL server and the database
+		require( 'includes/connect_db.php' ) ;
+		# Includes these helper functions
+		require( 'includes/helpers.php' ) ;
+	?>
+</html>

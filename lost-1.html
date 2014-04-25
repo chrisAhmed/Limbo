@@ -1,0 +1,47 @@
+<! DOCTYPE html>
+<! -- by Jackie Trivino and Chris Ahmed -->
+
+<html>
+	
+	<head>
+		<title> Limbo </title>
+		<link href="css/css.css" rel="stylesheet" type="text/css">
+	</head>
+	
+	<body>
+		
+		<div id="title" align=center-left>
+			<a href="index.php">[ Home ]</a> <a href="lost.html">   [ Lost Something ]   </a>   <a href="found.html">   [ Found Something ]   </a>   <a href="main_login.php">   [ Admins ]   </a>
+			
+			<h3><i>Limbo!</i></h3>
+			<h1>Lost</h1>
+			<p> We specialize in finding lost items around Marist College. If you have lost something,
+						don't worry! <br> Inform us of your lost item and we will help you find it!
+			</p>
+		</div>
+		
+		<div id="lostForm">
+			<form name="input" action="insertlost.php" method="post">
+				<fieldset>
+					<legend> Item description</legend>
+						<p><label class="field" for="stuff_name">			Item: 			</label> <input type="text" name="stuff_name"/></p>
+						<p><label class="field" for="description">Description: 	</label> <input type="text" name="description"/></p>
+						<p><label class="field" for="location">	Location:  		</label> <input type="text" name="location"/></p>
+						<p><label class="field" for="room_lf">		Room: 			</label> <input type="number" name="room_lf"/></p>
+						<p><label class="field" for="date_lf">	Date Lost:  	</label> <input type="datetime-local" name="date_lf"/></p>
+						<fieldset>
+              				<legend> Contact information </legend>
+               					<p><label class="field" for="name">		Name: 			</label> <input type="text" name="name"/></p>
+                				<p><label class="field" for="phone"> Phone: 		</label> <input type="number" name='phone' min="0000000000" max="9999999999"/></p>
+                				<p><label class="field" for="dorm">	Dorm: 			</label> <input type="text" name="dorm"/></p>
+                				<p><label class="field" for="room_num">	Room #:  		</label> <input type="number" name="room_num"/></p>
+						</fieldset>
+						<input type="submit" value="Submit" onclick="alert('submit successful!')";>
+					</fieldset>
+			</form>
+		</div>
+		
+	</body>
+
+
+</html>
