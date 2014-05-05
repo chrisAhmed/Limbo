@@ -34,8 +34,11 @@
 	<?php
 		# Connect to MySQL server and the database
 		require( 'includes/connect_db.php' ) ;
-		# Includes these helper functions
-		require( 'includes/helpers.php' ) ;	
+		# Includes the helper functions
+		require( 'includes/helpers.php' ) ;
+		# Includes the auto db and populate functions
+		require('includes/autohelpers.php');
+		init('limbo_db');
 		show_link_records($dbc);
 		mysqli_close($dbc);
 	?>
