@@ -3,7 +3,6 @@
 # Set this flag to false to disable debug diagnostics.
 $debug = true;
 
-# Initializes a database
 function init($dbname){
     # Connect to the database, if we fail assume the DB doesnt exist
     $dbc = @mysqli_connect ( 'localhost', 'root', '', $dbname );
@@ -14,7 +13,7 @@ function init($dbname){
         return $dbc;
     }
 
-    $dbc = @mysqli_connect ( 'localhost', 'root', '', 'limbo_db' );
+    $dbc = @mysqli_connect ( 'localhost', 'root', '', '' );
 
     $query = 'CREATE DATABASE ' . $dbname;
 
@@ -31,7 +30,7 @@ function init($dbname){
     # Set encoding to match PHP script encoding.
     mysqli_set_charset( $dbc, 'utf8' ) ;
 
-    $sql= file_get_contents('limbo_db.sql');
+    $sql= file_get_contents('limbo.sql');
     $results = mysqli_multi_query($dbc, $sql);
     mysqli_close( $dbc );
 
@@ -69,7 +68,6 @@ function init($dbname){
     # Recursive so I can guarantee a working connection
     return init($dbname);
 }
-
 # Checks the query results as a debugging aid
 function check_results($results) {
   global $dbc;

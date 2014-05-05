@@ -32,12 +32,11 @@
 	</body>
 	
 	<?php
-		$dbc = @mysqli_connect ( 'localhost', 'root', '', 'limbo_db' );
 		# Includes the helper functions
 		require( 'includes/helpers.php' ) ;
 		# Includes the auto db and populate functions
 		require('includes/autohelpers.php');
-		init('$dbc');
+		$dbc = init('limbo_db');
 		show_link_records($dbc);
 		mysqli_close($dbc);
 	?>
