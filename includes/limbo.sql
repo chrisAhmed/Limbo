@@ -17,7 +17,8 @@ CREATE TABLE IF NOT EXISTS stuff (
 	phone                     int                  not null, 
 	dorm                      text not null, 
 	room_num                  int not null, 
-	status                    SET ("found" , "lost" , "claimed"),
+	status                    SET ("found" , "lost"),
+	claimed				   SET("claimed", "not claimed"),
 	PRIMARY KEY (stuff_id)
 );
 

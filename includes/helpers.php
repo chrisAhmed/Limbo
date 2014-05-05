@@ -68,7 +68,8 @@
 			echo '<TH>Phone Number</TH>';
 			echo '<TH>Dorm</TH>';
 			echo '<TH>Room Number</TH>';
-			echo '<TH>Status</TH>';
+			echo '<TH>L/F?</TH>';
+			echo '<TH>Claimed?</TH>';
 			echo '</TR>';
 
 			# For each row result, generate a table row
@@ -85,6 +86,7 @@
 			echo '<TD>' . $row['dorm'] . '</TD>';
 			echo '<TD>' . $row['room_num'] . '</TD>';
 			echo '<TD>' . $row['status'] . '</TD>';
+			echo '<TD>' . $row['claimed'] . '</TD>';
 			echo '</TR>' ;
 			}
 
@@ -114,8 +116,7 @@
 			echo '<TH>ID</TH>';
 			echo '<TH>Date</TH>';
 			echo '<TH>Item</TH>';
-			echo '<TH>Description</TH>';
-			echo '<TH>Status</TH>';
+			echo '<TH>L/F?</TH>';
 			echo '</TR>';
 
 
@@ -127,7 +128,6 @@
 				echo '<TD ALIGN=right>' . $alink . '</TD>';
 				echo '<TD>' . $row['date_lf'] . '</TD>';
 				echo '<TD>' . $row['stuff_name'] . '</TD>';
-				echo '<TD>' . $row['description'] . '</TD>';
 				echo '<TD>' . $row['status'] . '</TD>';
 				echo '</TR>' ;
 				$_SESSION['stuff_name'] = $row;
@@ -140,4 +140,5 @@
 			mysqli_free_result( $results ) ;
 		}
 	}
+	
  ?>

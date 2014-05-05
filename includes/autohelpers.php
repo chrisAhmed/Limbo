@@ -14,7 +14,7 @@ function init($dbname){
         return $dbc;
     }
 
-    $dbc = @mysqli_connect ( 'localhost', 'root', '', '' );
+    $dbc = @mysqli_connect ( 'localhost', 'root', '', 'limbo_db' );
 
     $query = 'CREATE DATABASE ' . $dbname;
 
@@ -38,152 +38,36 @@ function init($dbname){
     # Ggives mysql some time to run through all the queries
     # If the database needs more time to load, then there are probably other problems with the computer
     sleep(1);
+	
+	if ( $_SERVER[ 'REQUEST_METHOD' ] == 'GET' ) {
+		$stuff_name = "stuff_name" ;
+		$description = "description" ;
+		$location = "location" ;
+		$room_lf = "room_lf";
+		$date_lf= "date_lf";
+		$name = "name";
+		$phone = "phone";
+		$dorm = "dorm";
+		$room_num = "room_num";
+		$status="status";
+		$claimed="claimed";
+	}
 
+	if ($_SERVER[ 'REQUEST_METHOD' ] == 'POST') {
+		$stuff_name = $_POST['stuff_name'] ;
+		$description = $_POST['description'] ;
+		$location = $_POST['location'];
+		$room_lf = $_POST['room_lf'];
+		$date_lf = $_POST['date_lf'];
+		$name = $_POST['name'];
+		$phone = $_POST['phone'];
+		$dorm = $_POST['dorm'];
+		$room_num = $_POST['room_num'];
+		$status = $_POST['status'];
+		$claimed = $_PPST['claimed'];
+	}	
     # Recursive so I can guarantee a working connection
     return init($dbname);
-}
-
-/*# Shows exactly one record in prints.
-function show_record($dbc,$id) {
-    # Create a query to get the name and price sorted by price
-    $query = 'SELECT id, name, price FROM prints WHERE id = ' . $id ;
-
-    # Execute the query
-    $results = mysqli_query( $dbc , $query ) ;
-    check_results($results) ;
-
-    # Show results
-    if( $results )
-    {
-          # But...wait until we know the query succeeded before
-          # rendering the table start.
-          echo '<H1>Prints detail</H1>' ;
-          echo '<TABLE>';
-          echo '<TR>';
-          echo '<TH ALIGN=right>Id</TH>';
-          echo '<TH ALIGN=left>Name</TH>';
-          echo '<TH ALIGN=right>Price</TH>';
-          echo '</TR>';
-
-          # For each row result, generate a table row
-          # Output exactly one row
-          if ( $row = mysqli_fetch_array( $results , MYSQLI_ASSOC ) )
-          {
-            echo '<TR BGCOLOR=#E0E0E0>' ;
-            echo '<TD ALIGN=right>' . $row['id'] . '</TD>' ;
-            echo '<TD ALIGN=left>' . $row['name'] . '</TD>' ;
-            echo '<TD ALIGN=right>' . $row['price'] . '</TD>' ;
-            echo '</TR>' ;
-          }
-
-          # End the table
-          echo '</TABLE>';
-          echo '<HR>' ;
-
-          # Free up the results in memory
-          mysqli_free_result( $results ) ;
-    }
-}
-
-# Shows only the id and name in prints
-function show_link_records($dbc) {
-    # Create a query to get the name and price sorted by price
-    $query = 'SELECT id, name FROM prints ORDER BY id DESC' ;
-
-    # Execute the query
-    $results = mysqli_query( $dbc , $query ) ;
-    check_results($results) ;
-
-    # Show results
-    if( $results )
-    {
-          # But...wait until we know the query succeeded before
-          # rendering the table start.
-          echo '<H1>Prints summary</H1>' ;
-          echo 'Click an id for more detail.<BR>' ;
-          echo '<TABLE>';
-          echo '<TR>';
-          echo '<TH ALIGN=right>Id</TH>';
-          echo '<TH ALIGN=left>Name</TH>';
-          echo '</TR>';
-
-          # For each row result, generate a table row with a hyperlink for more detail
-          while ( $row = mysqli_fetch_array( $results , MYSQLI_ASSOC ) )
-          {
-              # Build the hyperlink
-              $alink = '<A HREF=linkprints.php?id=' . $row['id'] . '>' . $row['id'] . '</A>' ;
-
-            # Put the hypelink in the table
-            echo '<TR>' ;
-            echo '<TD ALIGN=right>' . $alink . '</TD>' ;
-            #echo '<TD>' . $row['id'] . '</TD>' ;
-            echo '<TD>' . $row['name'] . '</TD>' ;
-            echo '</TR>' ;
-          }
-
-          # End the table
-          echo '</TABLE>';
-
-          # Free up the results in memory
-          mysqli_free_result( $results ) ;
-    }
-}
-
-# Shows the records in prints
-function show_records($dbc) {
-    # Create a query to get the name and price sorted by price
-    $query = 'SELECT name, price FROM prints ORDER BY price ASC' ;
-
-    # Execute the query
-    $results = mysqli_query( $dbc , $query ) ;
-    check_results($results) ;
-
-    # Show results
-    if( $results )
-    {
-          # But...wait until we know the query succeeded before
-          # rendering the table start.
-          echo '<H1>Prints</H1>' ;
-          echo '<TABLE>';
-          echo '<TR>';
-          echo '<TH>Name</TH>';
-          echo '<TH>Price</TH>';
-          echo '</TR>';
-
-          # For each row result, generate a table row
-          while ( $row = mysqli_fetch_array( $results , MYSQLI_ASSOC ) )
-          {
-            echo '<TR>' ;
-            echo '<TD>' . $row['name'] . '</TD>' ;
-            echo '<TD>' . $row['price'] . '</TD>' ;
-            echo '</TR>' ;
-          }
-
-          # End the table
-          echo '</TABLE>';
-
-          # Free up the results in memory
-          mysqli_free_result( $results ) ;
-    }
-}
-
-# Inserts a record into the prints table
-function insert_record($dbc, $name, $price) {
-  $query = 'INSERT INTO prints(name, price) VALUES ("' . $name . '" , ' . $price . ' )' ;
-  show_query($query);
-
-  $results = mysqli_query($dbc,$query) ;
-  check_results($results) ;
-
-  return $results ;
-}
-
-# Shows the query as a debugging aid
-function show_query($query) {
-  global $debug;
-
-  if($debug)
-    echo "<p>Query = $query</p>" ;
 }
 
 # Checks the query results as a debugging aid
@@ -193,5 +77,5 @@ function check_results($results) {
   if($results != true)
     echo '<p>SQL ERROR = ' . mysqli_error( $dbc ) . '</p>'  ;
 }
-*/
+
 ?>
