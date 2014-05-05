@@ -5,12 +5,11 @@
 	<a href="index.php">[ Home ]</a> <a href="lost.html">   [ Lost Something ]   </a>   <a href="found.html">   [ Found Something ]   </a>   <a href="main_login.php">   [ Admins ]   </a>
 	
 	<?php
-		$dbc = @mysqli_connect ( 'localhost', 'root', '', 'limbo_db' );
 		# Includes the helper functions
 		require( 'includes/helpers.php' ) ;
 		# Includes the auto db and populate functions
 		require('includes/autohelpers.php');
-		init('$dbc');
+		$dbc = init('limbo_db');
 				
 		//Check connection
 		if (mysqli_connect_errno()) {
@@ -28,7 +27,7 @@
 		$dorm = mysqli_real_escape_string($dbc, $_POST['dorm']);
 		$room_num = mysqli_real_escape_string($dbc, $_POST['room_num']);
 		$status = "lost";
-		$claimed = "not claimed";
+		$claimed = "unclaimed";
 
 
 		$sql="INSERT INTO stuff (stuff_name, description, location, room_lf, date_lf, name, phone, dorm, room_num, status, claimed)

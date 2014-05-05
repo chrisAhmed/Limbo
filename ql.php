@@ -6,12 +6,11 @@
 	
 	<?php
 		session_start();
-		$dbc = @mysqli_connect ( 'localhost', 'root', '', 'limbo_db' );
 		# Includes the helper functions
 		require( 'includes/helpers.php' ) ;
 		# Includes the auto db and populate functions
 		require('includes/autohelpers.php');
-		init('$dbc');
+		$dbc = init('limbo_db');
 
 		$passedid = $_GET["id"];
 		show_all_records($passedid,$dbc);

@@ -30,7 +30,7 @@ function init($dbname){
     # Set encoding to match PHP script encoding.
     mysqli_set_charset( $dbc, 'utf8' ) ;
 
-    $sql= file_get_contents('limbo.sql');
+    $sql= file_get_contents('C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\Limbo\includes\limbo.sql');
     $results = mysqli_multi_query($dbc, $sql);
     mysqli_close( $dbc );
 
@@ -63,7 +63,7 @@ function init($dbname){
 		$dorm = $_POST['dorm'];
 		$room_num = $_POST['room_num'];
 		$status = $_POST['status'];
-		$claimed = $_PPST['claimed'];
+		$claimed = $_POST['claimed'];
 	}	
     # Recursive so I can guarantee a working connection
     return init($dbname);
