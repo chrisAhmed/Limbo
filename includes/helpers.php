@@ -111,7 +111,8 @@
 			# starting the table.
 			echo '<TABLE  border="1">';
 			echo '<TR>';
-			echo '<TH>Click link</TH>';
+			echo '<TH>ID</TH>';
+			echo '<TH>Date</TH>';
 			echo '<TH>Item</TH>';
 			echo '<TH>Description</TH>';
 			echo '<TH>Status</TH>';
@@ -124,6 +125,7 @@
 				$alink = '<A HREF=ql.php?id=' . $row['stuff_id'] . '>' . $row['stuff_id'] . '</A>' ;
 				echo '<TR>' ; 
 				echo '<TD ALIGN=right>' . $alink . '</TD>';
+				echo '<TD>' . $row['date_lf'] . '</TD>';
 				echo '<TD>' . $row['stuff_name'] . '</TD>';
 				echo '<TD>' . $row['description'] . '</TD>';
 				echo '<TD>' . $row['status'] . '</TD>';
