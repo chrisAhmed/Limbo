@@ -37,11 +37,15 @@ CREATE TABLE IF NOT EXISTS locations (
 	PRIMARY KEY (loc_id)
 );
 
-/*INSERT INTO stuff (stuff_name, description, location, room_lf, 
-	date_lf, name, phone, dorm, room_num)
+INSERT INTO stuff (stuff_name, description, location, room_lf, 
+	date_lf, name, phone, dorm, room_num,status, claimed)
 VALUES
-	("bag", "brown bag", "donelly", "225", "21355","Chris","23423523","champ","2342","lost"),
-	("bag", "blue bag", "dyson", "234", "214253355","Jackie","234776","gart","12","lost");*/
+	("Phone", "8gb iPhone 5s BLACK. Cracked around camera", "Donelly", "225", "2014-05-01 04:55:00","Chris","8455555555","NONE","0","lost","unclaimed"),
+	("Laptop", "Acer C720p chromebook with stickers on top", "Dyson parking lot", "0", "2014-04-16 11:36:00","Josh Groben","9142375489","Gartland","14","lost","unclaimed"),
+	("Backpack", "Denim LL Bean backpack. 2 binders, calculator and 2 notebooks inside", "Fontaine", "208", "2014-4-26 15:20:00","Jackie","5563214785","Gartland","5","lost","unclaimed"),
+	("Binder", "Fashionology binder, blue with yellow print on the front", "Library", "112", "2014-3-11 22:08:00","Randy Inspirati","8529637410","Champ","122","found","unclaimed"),
+	("Phone", "Red Samsung Galaxy s4 with pink cover", "Lowel Thomas", "200", "2014-3-23 2:16:00","Steve Wholesome","9999999999","Upper West","481","found","unclaimed"),
+	("Bag", "Leather Gucci bag with lots of keychains", "Hancock", "300", "2014-04-01 7:44:00","Stacy Kiebler","7410852364","Lower West","85","found","unclaimed");
 	
 INSERT INTO admins (user_id, username, password)
 	VALUES 
