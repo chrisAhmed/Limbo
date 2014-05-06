@@ -1,3 +1,8 @@
+<html> 
+	<a href="index.php">[ Home ]</a> <a href="lost.html">   [ Lost Something ]   </a>   <a href="found.html">   [ Found Something ]   </a>   <a href="main_login.php">   [ Admins ]   </a>
+
+</html>
+
 <?php
 	# Includes the helper functions
 	require( 'includes/helpers.php' ) ;
@@ -5,8 +10,7 @@
 	require('includes/autohelpers.php');
 	
 	$dbc = init('limbo_db');
-	
-	//Check connection
+
 
 	$stuff_id =  $_POST['stuff_id'];
 	$stuff_name = mysqli_real_escape_string($dbc, $_POST['stuff_name']);
@@ -21,8 +25,10 @@
 	$status = mysqli_real_escape_string($dbc, $_POST['status']);
 	$claimed = mysqli_real_escape_string($dbc, $_POST['claimed']);
 	
-	$sql="UPDATE stuff SET stuff_name= 'stuff_name' , description= 'description', location= 'location', room_lf= 'room_lf', date_lf= 'date_lf', name= 'name', phone= 'phone', dorm= 'dorm', room_num= 'room_num', status= 'status', claimed= 'claimed' WHERE stuff_id='$stuff_id' ";
+//	$sql="UPDATE stuff SET stuff_name=$stuff_name, description= $description, location= $location, room_lf= $room_lf, date_lf= $date_lf, name= $name, phone= $phone, dorm= $dorm, room_num= $room_num, status= $status, claimed= $claimed WHERE stuff_id=$stuff_id ";
 
+	$sql= "UPDATE stuff SET stuff_name= '$stuff_name', description= '$description', location= '$location', room_lf= '$room_lf', date_lf= '$date_lf', name= '$name', phone= '$phone', dorm= '$dorm', room_num= '$room_num', status= '$status', claimed= '$claimed' WHERE stuff_id = " . $stuff_id;
+	
 	if (!mysqli_query($dbc,$sql)) {
 		 die('Error: ' . mysqli_error($dbc));
 	}

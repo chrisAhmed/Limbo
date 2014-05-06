@@ -22,7 +22,7 @@
 			<form name="input" action="admin.php" method="post">
 				<fieldset>
 					<legend> Admin Panel</legend>
-						<p><label class="field" for="item_id">	Item ID: </label> <input type="text" name="item_id"/></p>
+						<p><label class="field" for="stuff">	Item ID: </label> <input type="text" name="stuff_id" id="stuff_id"/></p>
 						<input type="submit" name="EDIT" value="EDIT">
 						<input type="submit" name="DELETE" value="DELETE" >
 					</fieldset>

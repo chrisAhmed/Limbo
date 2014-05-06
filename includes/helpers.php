@@ -134,7 +134,7 @@
 			{
 				
 				echo '<TR>' ;
-				echo '<TD ALIGN=right>' . $row['stuff_id'] . '</TD>';
+				echo '<TD ALIGN=center>' . $row['stuff_id'] . '</TD>';
 				echo '<TD>' . $row['stuff_name'] . '</TD>' ;
 				echo '<TD>' . $row['description'] . '</TD>' ;
 				echo '<TD>' . $row['location'] . '</TD>';
