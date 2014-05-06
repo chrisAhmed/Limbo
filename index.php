@@ -5,7 +5,7 @@
 
 	<head>
 		<title> Limbo </title>
-		<link href="css/css.css" rel"stylesheet" type="text/css">
+		<link href="css/css.css" rel="stylesheet" type="text/css">
 	</head>
 
 	<body>

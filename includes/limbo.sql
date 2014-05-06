@@ -49,7 +49,7 @@ VALUES
 	
 INSERT INTO admins (user_id, username, password)
 	VALUES 
-		("1", "ADMIN", "gaze11e");
+		("1", "admin", "gaze11e");
 		
 INSERT INTO locations (name) 
 	VALUES
