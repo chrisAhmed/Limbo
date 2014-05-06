@@ -23,16 +23,16 @@
 				<fieldset>
 					<legend> Item description</legend>
 						<p><label class="field" for="stuff_name">			Item: 			</label> <input type="text" name="stuff_name"/></p>
-						<p><label class="field" for="description">Description: 	</label> <textarea name="description" id="description" cols="25" rows="3"></textarea> </p>
-						<p><label class="field" for="location">	Location:  		</label> <input type="text" name="location"/></p> 
-						<p><label class="field" for="room_lf">		Room #: 			</label> <input type="number" name="room_lf"/></p>
+						<p><label class="field" for="description">Description: 	</label> <textarea name="description" id="description"  placeholder="Brief description of item" cols="25" rows="3"></textarea> </p>
+						<p><label class="field" for="location">	Location:  		</label> <input type="text" name="location" placeholder="i.e. Dyson"/></p> 
+						<p><label class="field" for="room_lf">		Room #: 			</label> <input type="number" name="room_lf"  placeholder="i.e. 200"/></p>
 						<p><label class="field" for="date_lf">	Date Found:  	</label> <input type="datetime-local" name="date_lf"/></p>
 						<fieldset>
               				<legend> Contact information </legend>
                					<p><label class="field" for="name">		Name: 			</label> <input type="text" name="name"/></p>
-                				<p><label class="field" for="phone"> Phone: 		</label> <input type="number" name='phone' min="0000000000" max="9999999999"/></p>
-                				<p><label class="field" for="dorm">	Dorm: 			</label> <input type="text" name="dorm"/></p>
-                				<p><label class="field" for="room_num">	Room #:  		</label> <input type="number" name="room_num"/></p>
+                				<p><label class="field" for="phone"> Phone: 		</label> <input type="number" name='phone' min="0000000000" max="9999999999" placeholder="5555555555"/></p>
+                				<p><label class="field" for="dorm">	Dorm: 			</label> <input type="text" name="dorm" placeholder="NONE if commuter"/></p>
+                				<p><label class="field" for="room_num">	Room #:  		</label> <input type="number" name="room_num" placeholder="0 if commuter"/></p>
 						</fieldset>
 						<input type="submit" value="Submit" >
 						<input type="reset" value="reset" />

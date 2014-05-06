@@ -1,4 +1,5 @@
 <?php
+	
 	$debug = true;
 
 	# Shows records after submission
@@ -106,14 +107,14 @@
 
 		# Execute the query
 		$results = mysqli_query( $dbc , $query ) ;
-
+		
 		# Show results
 		if( $results ){
 			# But...wait until we know the query succeeded before
 			# starting the table.
 			echo '<H1>Items</H1>' ;
 			echo '<H3>Admin Panel</h3>';
-			echo '<TABLE  border="1">';
+			echo '<TABLE  border=1px cellpadding="0" cellspacing="0" style="border:3px dashed blue;">';
 			echo '<TR>';
 			echo '<TH>ID</TH>';
 			echo '<TH>Item Name</TH>';
@@ -160,6 +161,19 @@
 
 	}		
 		
+	function deleterec($id){
+	
+		echo 'alert("Deleted")';
+		
+	}
+	
+	function adminedit($id){
+	
+	
+	}
+	
+	
+	
 	# Shows a view of records on the main page
 	function show_link_records($dbc) {
 		# Create a query to get everything from stuff
