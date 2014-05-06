@@ -18,7 +18,7 @@
 				<br>
 				<br>
 				<table border="0" cellspacing="1" cellpadding="0">
-					<form name="form1" method="post" action="update.php">
+					<form name="update" method="post" action="update.php">
 						<td>
 						<table width="100%" border="0" cellspacing="1" cellpadding="0">
 						<tr>
