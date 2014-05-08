@@ -15,20 +15,7 @@
 			<h1> Welcome to <i>Limbo!</i></h1>
 			<p>If you lost or found something, you're in luck: this is the place to report it.</p>
 		</div>
-
-		<div id="query" align=center-left>
-			<h2> Lost and Found </h2>
-			<form action="">
-				Submitted in last 
-				<select name="dateQuery">
-					<option value="7" selected>7 days</option>
-					<option value="14">14 days</option>
-					<option value="28">28 days</option>
-					<option value="50">50 days</option>
-				</select>
-			</form>
-		</div>
-		
+	
 	</body>
 	
 	<?php

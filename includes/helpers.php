@@ -113,7 +113,7 @@
 			# But...wait until we know the query succeeded before
 			# starting the table.
 			echo '<H3>Items</H3>' ;
-			echo '<TABLE  border=1px cellpadding="0" cellspacing="0" style="border:3px dashed blue;">';
+			echo '<TABLE  border=1px cellpadding="0" cellspacing="0">';
 			echo '<TR>';
 			echo '<TH>ID</TH>';
 			echo '<TH>Item Name</TH>';
@@ -128,7 +128,6 @@
 			echo '<TH>L/F?</TH>';
 			echo '<TH>Claimed?</TH>';
 			echo '</TR>';
-
 			
 			while ( $row = mysqli_fetch_array( $results ) )
 			{
@@ -173,15 +172,16 @@
 		if( $results ){
 			# But...wait until we know the query succeeded before
 			# starting the table.
-			echo '<TABLE  border="1">';
-			echo '<TR>';
-			echo '<TH>ID</TH>';
-			echo '<TH>Date</TH>';
-			echo '<TH>Item</TH>';
-			echo '<TH>L/F?</TH>';
-			echo '</TR>';
-
-
+			echo '
+			<div style="height:400px; overflow:auto;">
+			<table cellpadding="1" border="1">
+				<tr>
+					<TH>ID</TH>
+					<TH>Date</TH>
+					<TH>Item</TH>
+					<TH>L/F?</TH>
+				</tr>';
+						
 			# For each row result, generate a table row
 			while ( $row = mysqli_fetch_array( $results ) )
 			{
@@ -196,7 +196,8 @@
 			}
 
 			# End the table
-			echo '</TABLE>';
+			echo '</table>  
+			</div>';
 
 			# Free up the results in memory
 			mysqli_free_result( $results ) ;

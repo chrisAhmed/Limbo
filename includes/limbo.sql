@@ -5,7 +5,6 @@ DROP DATABASE IF EXISTS limbo_db;
 CREATE DATABASE IF NOT EXISTS limbo_db;
 USE limbo_db;
 
-
 CREATE TABLE IF NOT EXISTS stuff (
 	stuff_id                  INT           AUTO_INCREMENT,
 	stuff_name                TEXT          NOT NULL,
@@ -22,14 +21,12 @@ CREATE TABLE IF NOT EXISTS stuff (
 	PRIMARY KEY (stuff_id)
 );
 
-
 CREATE TABLE IF NOT EXISTS admins (
 	user_id		 INT           NOT NULL  AUTO_INCREMENT,
 	username    VARCHAR(65)          NOT NULL default '',
 	password     VARCHAR(65)          NOT NULL default '',
 	PRIMARY KEY (user_id)
 );
-
 
 CREATE TABLE IF NOT EXISTS locations (
 	loc_id           INT             AUTO_INCREMENT,
