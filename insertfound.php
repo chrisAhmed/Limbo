@@ -37,6 +37,8 @@
 			die('Error: ' . mysqli_error($dbc));
 		}
 		
+		echo '<br>';
+		echo '<br>';
 		echo "<h3>Thank you for submitting an item you found! You are a good samaritan! I'm sure someone will contact you soon</h3>";
         
         show_records($dbc);

@@ -10,12 +10,28 @@
 
 	<body>
 	
-		<div id="title" align=center-left>
-			<a href="lost.html"> [Lost Something] </a>	 <a href="found.html"> [Found Something] </a> 	<a href="main_login.php"> [Admins] </a>
+		<div id="title" align=center>
+			<img id="img" src="images/limbo_logo.jpg">
 			<h1> Welcome to <i>Limbo!</i></h1>
-			<p>If you lost or found something, you're in luck: this is the place to report it.</p>
+			<p>If you lost or found something, you're in luck: this is the place to report it.</p>		
 		</div>
-	
+
+		<br>
+		<br>
+		<div id="menu" align=center>
+			<ul>
+			<li><a href="index.php">Home</a></li>
+			<li><a href="lost.html">Lost Something</a></li>
+			<li><a href="found.html">Found Something</a></li>
+			<li><a href="main_login.php">Admin</a></li>
+			</ul>
+
+		</div>
+
+<br>
+<br>
+<br>
+
 	</body>
 	
 	<?php

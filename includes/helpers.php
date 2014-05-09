@@ -173,7 +173,7 @@
 			# But...wait until we know the query succeeded before
 			# starting the table.
 			echo '
-			<div style="height:400px; overflow:auto;">
+			<div style="overflow:auto;" align=center>
 			<table cellpadding="1" border="1">
 				<tr>
 					<TH>ID</TH>
