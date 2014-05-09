@@ -1,6 +1,4 @@
 <html> 
-	<a href="index.php">[ Home ]</a> <a href="lost.html">   [ Lost Something ]   </a>   <a href="found.html">   [ Found Something ]   </a>   <a href="main_login.php">   [ Admins ]   </a>
-
 </html>
 
 <?php
@@ -28,6 +26,8 @@
 //	$sql="UPDATE stuff SET stuff_name=$stuff_name, description= $description, location= $location, room_lf= $room_lf, date_lf= $date_lf, name= $name, phone= $phone, dorm= $dorm, room_num= $room_num, status= $status, claimed= $claimed WHERE stuff_id=$stuff_id ";
 
 	$sql= "UPDATE stuff SET stuff_name= '$stuff_name', description= '$description', location= '$location', room_lf= '$room_lf', date_lf= '$date_lf', name= '$name', phone= '$phone', dorm= '$dorm', room_num= '$room_num', status= '$status', claimed= '$claimed' WHERE stuff_id = " . $stuff_id;
+	
+	header( 'Location: login_success.php' ) ;
 	
 	if (!mysqli_query($dbc,$sql)) {
 		 die('Error: ' . mysqli_error($dbc));
